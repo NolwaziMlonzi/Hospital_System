@@ -19,6 +19,9 @@ namespace Hospital_System.Models
         [Display(Name = "Date and Time")]
         public string date { set; get; }
 
+        [Display(Name = "Room No.")]
+        public int Room { set; get; }
+
         [Display(Name = "Doctor's ID No.")]
         [ForeignKey("Doctor")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]

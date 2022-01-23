@@ -1,0 +1,41 @@
+﻿
+
+@{
+    ViewData["Title"] = "_SideNavBar";
+}
+
+<div :class="">
+    <div id="mySidenav" class="sidenav bg-primary">
+        <span class="closebtn" style="font-size: 30px; cursor: pointer; margin-left: 15px; " @@click="collapse ? openNav() : closeNav()">&#9776;</span>
+        <div class="links" id="links">
+            <ul class="navbar-nav me-auto">
+                @* Link to existing Patients *@
+                <li class="nav-item" id="navPatients">
+                    <div class="dropdown-divider"></div>
+                    @Html.ActionLink("Patients", "Index", "Patient")
+                    <div class="dropdown-divider"></div>
+                </li>
+                @* link to both internal and external *@
+                <li class="nav-item" id="navDoctors">
+                    <div class="dropdown-divider"></div>
+                    @Html.ActionLink("Doctors", "Index", "Doctor")
+                </li>
+                @* link to booked appointments *@
+                <li class="nav-item" id="navAppointment">
+                    <div class="dropdown-divider"></div>
+                    @Html.ActionLink("Appointments", "Index", "Appointment")
+                </li>
+               <li class="nav-item" id="navRooms">
+                @Html.ActionLink("Room", "Index", "Room")
+                </li>
+                @* link to  available reports *@
+                <li class="nav-item" id="navReport">
+                    <div class="dropdown-divider"></div>
+                    @Html.ActionLink("Reports", "Index", "Report")
+                    <div class="dropdown-divider"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

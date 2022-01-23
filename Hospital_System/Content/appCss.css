@@ -1,0 +1,81 @@
+﻿
+
+.sidenav {
+    left: 0;
+    background-color: rgb(26, 26, 26);
+    overflow-x: hidden;
+    transition: 0.5s;
+    height: calc(100% - 100px);
+    width: 60px;
+    position: fixed;
+    z-index: 1;
+}
+.navbar-nav.me-auto
+{
+    list-style-type:none;
+}
+.sidenav .links {
+    display: none;
+    position: relative;
+    top: 3em;
+}
+
+    .sidenav a {
+        padding: 10px 8px 10px 32px !important;
+        text-decoration: none;
+        font-size: 15px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+        /*            border-bottom: 1px solid #2222224f;
+    */
+    }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        font-size: 36px;
+        margin-left: 15px;
+        color: #fff;
+    }
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+
+.dropList {
+    right: 31px;
+    position: relative;
+    width: 97px;
+    border-bottom: 1px solid #2222224f;
+}
+
+.service:hover + .drop {
+    display: block;
+}
+
+.drop:hover {
+    display: block;
+}
+
+.dropdown-menu {
+    position: absolute !important;
+    width: 100%;
+    box-shadow: -2px 1px 13px 4px #111;
+    border: none;
+}
