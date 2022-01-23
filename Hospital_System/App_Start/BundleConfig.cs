@@ -20,7 +20,13 @@ namespace Hospital_System
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/lib/font-awesome/css/all.min.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
+            
+            bundles.Add(new StyleBundle("~/bundles/font_awesome").Include(
+                     "~/lib/font-awesome/css/all.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
