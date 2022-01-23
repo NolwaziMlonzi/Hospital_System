@@ -10,7 +10,6 @@ namespace Hospital_System.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Hospital_System.Data.HSDbContext";
         }
 
         protected override void Seed(Hospital_System.Data.HSDbContext context)

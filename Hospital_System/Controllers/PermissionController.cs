@@ -11,107 +11,107 @@ using Hospital_System.Models;
 
 namespace Hospital_System.Controllers
 {
-    public class AppointmentController : Controller
+    public class PermissionController : Controller
     {
         private HSDbContext db = new HSDbContext();
 
-        // GET: Appointment
+        // GET: Permission
         public ActionResult Index()
         {
-            return View(db.Appointments.ToList());
+            return View(db.Permissons.ToList());
         }
 
-        // GET: Appointment/Details/5
+        // GET: Permission/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Appointment appointment = db.Appointments.Find(id);
-            if (appointment == null)
+            Permission permission = db.Permissons.Find(id);
+            if (permission == null)
             {
                 return HttpNotFound();
             }
-            return View(appointment);
+            return View(permission);
         }
 
-        // GET: Appointment/Create
+        // GET: Permission/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Appointment/Create
+        // POST: Permission/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "appointmentID,patientID,date,doctorID,Room")] Appointment appointment)
+        public ActionResult Create([Bind(Include = "ID,Add,Edit,Delete,View,Module,Role")] Permission permission)
         {
             if (ModelState.IsValid)
             {
-                db.Appointments.Add(appointment);
+                db.Permissons.Add(permission);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(appointment);
+            return View(permission);
         }
 
-        // GET: Appointment/Edit/5
+        // GET: Permission/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Appointment appointment = db.Appointments.Find(id);
-            if (appointment == null)
+            Permission permission = db.Permissons.Find(id);
+            if (permission == null)
             {
                 return HttpNotFound();
             }
-            return View(appointment);
+            return View(permission);
         }
 
-        // POST: Appointment/Edit/5
+        // POST: Permission/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "appointmentID,patientID,date,doctorID,Room")] Appointment appointment)
+        public ActionResult Edit([Bind(Include = "ID,Add,Edit,Delete,View,Module,Role")] Permission permission)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(appointment).State = EntityState.Modified;
+                db.Entry(permission).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(appointment);
+            return View(permission);
         }
 
-        // GET: Appointment/Delete/5
+        // GET: Permission/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Appointment appointment = db.Appointments.Find(id);
-            if (appointment == null)
+            Permission permission = db.Permissons.Find(id);
+            if (permission == null)
             {
                 return HttpNotFound();
             }
-            return View(appointment);
+            return View(permission);
         }
 
-        // POST: Appointment/Delete/5
+        // POST: Permission/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Appointment appointment = db.Appointments.Find(id);
-            db.Appointments.Remove(appointment);
+            Permission permission = db.Permissons.Find(id);
+            db.Permissons.Remove(permission);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -130,6 +130,7 @@
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
+    <Compile Include="Controllers\PermissionController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -137,28 +138,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202201222133067_InitialCreate.cs" />
-    <Compile Include="Migrations\202201222133067_InitialCreate.Designer.cs">
-      <DependentUpon>202201222133067_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202201231753439_InitialCreate.cs" />
+    <Compile Include="Migrations\202201231753439_InitialCreate.Designer.cs">
+      <DependentUpon>202201231753439_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202201222159526_change doctor%27s name property datatype from int to string.cs" />
-    <Compile Include="Migrations\202201222159526_change doctor%27s name property datatype from int to string.Designer.cs">
-      <DependentUpon>202201222159526_change doctor%27s name property datatype from int to string.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202201222217247_change datatype for date property for appoinment.cs" />
-    <Compile Include="Migrations\202201222217247_change datatype for date property for appoinment.Designer.cs">
-      <DependentUpon>202201222217247_change datatype for date property for appoinment.cs</DependentUpon>
+    <Compile Include="Migrations\202201231804095_added role prop in permission.cs" />
+    <Compile Include="Migrations\202201231804095_added role prop in permission.Designer.cs">
+      <DependentUpon>202201231804095_added role prop in permission.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\Permission.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\appCss.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -170,6 +169,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\API\doAPIRequest-1.0.0.js" />
+    <Content Include="Scripts\Custom\methods-1.0.0.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -180,6 +181,13 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Permission\Create.cshtml" />
+    <Content Include="Views\Permission\Delete.cshtml" />
+    <Content Include="Views\Permission\Details.cshtml" />
+    <Content Include="Views\Permission\Edit.cshtml" />
+    <Content Include="Views\Permission\Index.cshtml" />
+    <None Include="Views\Shared\VueJS.cshtml" />
+    <Content Include="Scripts\VueImport-1.0.0.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -224,6 +232,9 @@
     <Content Include="Views\Appointment\Details.cshtml" />
     <Content Include="Views\Appointment\Edit.cshtml" />
     <Content Include="Views\Appointment\Index.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_SideNavBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -242,14 +253,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202201222133067_InitialCreate.resx">
-      <DependentUpon>202201222133067_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202201231753439_InitialCreate.resx">
+      <DependentUpon>202201231753439_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202201222159526_change doctor%27s name property datatype from int to string.resx">
-      <DependentUpon>202201222159526_change doctor%27s name property datatype from int to string.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202201222217247_change datatype for date property for appoinment.resx">
-      <DependentUpon>202201222217247_change datatype for date property for appoinment.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202201231804095_added role prop in permission.resx">
+      <DependentUpon>202201231804095_added role prop in permission.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Hospital_System.Models.Permission>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Add)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Delete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.View)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Module)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Add)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Edit)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Delete)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.View)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Module)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Role)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
+}
+
+</table>
