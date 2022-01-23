@@ -13,7 +13,8 @@ namespace Hospital_System.Migrations
                     {
                         appointmentID = c.Int(nullable: false),
                         patientID = c.Int(nullable: false),
-                        date = c.Int(nullable: false),
+                        date = c.String(),
+                        Room = c.Int(nullable: false),
                         doctorID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.appointmentID);
@@ -23,7 +24,7 @@ namespace Hospital_System.Migrations
                 c => new
                     {
                         doctorID = c.Int(nullable: false),
-                        doctorFullName = c.Int(nullable: false),
+                        doctorFullName = c.String(),
                         doctorPhysicalAddress = c.String(),
                         doctorPhoneNumber = c.String(),
                         qualification = c.String(),
@@ -45,6 +46,19 @@ namespace Hospital_System.Migrations
                         patientRoomNumber = c.String(),
                     })
                 .PrimaryKey(t => t.patientID);
+            
+            CreateTable(
+                "dbo.Permission",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Add = c.Boolean(nullable: false),
+                        Edit = c.Boolean(nullable: false),
+                        Delete = c.Boolean(nullable: false),
+                        View = c.Boolean(nullable: false),
+                        Module = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.Role",
@@ -104,6 +118,7 @@ namespace Hospital_System.Migrations
             DropTable("dbo.User");
             DropTable("dbo.Room");
             DropTable("dbo.Role");
+            DropTable("dbo.Permission");
             DropTable("dbo.Patient");
             DropTable("dbo.Doctor");
             DropTable("dbo.Appointment");

@@ -31,6 +31,11 @@ namespace Hospital_System
             //Bundle for api call method.
             bundles.Add(new ScriptBundle("~/bundles/api").Include(
                       "~/Scripts/API/doAPIRequest-{version}.js"));
+
+            //Bundle for vuejs import.
+            bundles.Add(new ScriptBundle("~/bundles/vuejs").Include(
+                "~/Scripts/API/VueImport-{version}.js"));
+
             //Bundle for styling the app
             bundles.Add(new StyleBundle("~/Content/appCss").Include(
                       "~/Content/appCss.css"));

@@ -7,13 +7,13 @@ namespace Hospital_System.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addedroominappointments : IMigrationMetadata
+    public sealed partial class addedrolepropinpermission : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedroominappointments));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addedrolepropinpermission));
         
         string IMigrationMetadata.Id
         {
-            get { return "202201231229354_added room in appointments"; }
+            get { return "202201231804095_added role prop in permission"; }
         }
         
         string IMigrationMetadata.Source

@@ -7,13 +7,13 @@ namespace Hospital_System.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addedroompropertytoappointments : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedroompropertytoappointments));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202201231157147_added room property to appointments"; }
+            get { return "202201231753439_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

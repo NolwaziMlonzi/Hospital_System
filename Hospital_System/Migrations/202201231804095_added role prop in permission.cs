@@ -3,16 +3,16 @@ namespace Hospital_System.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class changedatatypefordatepropertyforappoinment : DbMigration
+    public partial class addedrolepropinpermission : DbMigration
     {
         public override void Up()
         {
-            AlterColumn("dbo.Appointment", "date", c => c.String());
+            AddColumn("dbo.Permission", "Role", c => c.String());
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.Appointment", "date", c => c.Int(nullable: false));
+            DropColumn("dbo.Permission", "Role");
         }
     }
 }

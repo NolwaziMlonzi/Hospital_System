@@ -3,42 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Hospital Management System</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/appCss")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("User", "Index", "User")</li>
-                    <li>@Html.ActionLink("Patient", "Index", "Patient")</li>
-                    <li>@Html.ActionLink("Doctor", "Index", "Doctor")</li>
-                    <li>@Html.ActionLink("Appointment", "Index", "Appointment")</li>
-                    <li>@Html.ActionLink("Room", "Index", "Room")</li>
-                    <li>@Html.ActionLink("Role", "Index", "Role")</li>
-                </ul>
-            </div>
+    <div id="app">
+        @* Header containing top navigation bar *@
+        <div id="nav1">
+            @RenderPage("~/Views/Shared/_Header.cshtml")
+        </div>
+        <div id="nav2">
+            @RenderPage("~/Views/Shared/_SideNavBar.cshtml")
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+        </div>
+        <div id="nav3">
+            @RenderPage("~/Views/Shared/_Footer.cshtml")
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
+    @RenderPage("~/Views/Shared/VueJS.cshtml")
+    @Scripts.Render("~/bundles/vuejs")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
