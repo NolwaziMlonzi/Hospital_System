@@ -149,6 +149,14 @@
     <Compile Include="Migrations\202201222217247_change datatype for date property for appoinment.Designer.cs">
       <DependentUpon>202201222217247_change datatype for date property for appoinment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201231157147_added room property to appointments.cs" />
+    <Compile Include="Migrations\202201231157147_added room property to appointments.Designer.cs">
+      <DependentUpon>202201231157147_added room property to appointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201231229354_added room in appointments.cs" />
+    <Compile Include="Migrations\202201231229354_added room in appointments.Designer.cs">
+      <DependentUpon>202201231229354_added room in appointments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Doctor.cs" />
@@ -159,6 +167,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\appCss.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -170,6 +179,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\API\doAPIRequest-1.0.0.js" />
+    <Content Include="Scripts\Custom\methods-1.0.0.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -250,6 +261,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201222217247_change datatype for date property for appoinment.resx">
       <DependentUpon>202201222217247_change datatype for date property for appoinment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201231157147_added room property to appointments.resx">
+      <DependentUpon>202201231157147_added room property to appointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201231229354_added room in appointments.resx">
+      <DependentUpon>202201231229354_added room in appointments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
