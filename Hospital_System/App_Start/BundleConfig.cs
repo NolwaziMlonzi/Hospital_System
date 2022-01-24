@@ -42,6 +42,9 @@ namespace Hospital_System
             bundles.Add(new ScriptBundle("~/bundles/vuejs").Include(
                 "~/Scripts/API/VueImport-{version}.js"));
 
+            //Bundle for vuejs import.
+            bundles.Add(new ScriptBundle("~/bundles/methods").Include(
+                "~/Scripts/Custom/methods-{version}.js"));
             //Bundle for styling the app
             bundles.Add(new StyleBundle("~/Content/appCss").Include(
                       "~/Content/appCss.css"));
