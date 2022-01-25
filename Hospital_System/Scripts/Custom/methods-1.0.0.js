@@ -8,20 +8,8 @@
         link.type = 'text/css';
         link.media = 'all';
         switch (theme) {
-            case "slate":
-                link.href = "../Content/bootstrap_slate.css";
-                break;
-            case "solar":
-                link.href =  "../Content/bootstrap_solar.css";
-                break;
-            case "darkly":
-                link.href =  "../Content/bootstrap_darkly.css";
-                break;
             case "ocean":
                 link.href = "../Content/bootstrap_ocean.css";
-                break;
-            case "cyborg":
-                link.href =  "../Content/bootstrap_cyborg.css";
                 break;
             case "default":
             default:
