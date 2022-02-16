@@ -6290,7 +6290,7 @@ fieldset:disabled .btn {
 
 .modal-dialog {
     position: relative;
-    width: auto;
+    width: 500px;
     margin: 0.5rem;
     pointer-events: none;
 }
@@ -8854,6 +8854,7 @@ fieldset:disabled .btn {
 }
 
 .bg-dark {
+    display:none;
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
 }

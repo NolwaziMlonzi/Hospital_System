@@ -29,9 +29,10 @@ namespace Hospital_System
                      "~/lib/font-awesome/css/all.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                     "~/Content/bootstrap.css"
-                //"~/Content/bootstrap_ocean.css"
-                     // "~/Content/site.css"
+                 "~/Content/bootstrap_slate.css"
+                      // "~/Content/bootstrap.css"
+                      //"~/Content/bootstrap_ocean.css"
+                      // "~/Content/site.css"
                       ));
             //Bundle for app methods.
             bundles.Add(new ScriptBundle("~/bundles/methods").Include(
