@@ -1,39 +1,58 @@
-﻿<div class="modal">
+﻿@Scripts.Render("~/bundles/methods")
+@Scripts.Render("~/bundles/api")
+<div class="modal" id="loginScreen">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <fieldset>
-                    <h1>Login</h1> 
-                    </fieldset>
+                    <h1>Login</h1>
+                </fieldset>
             </div>
             <div class="modal-body">
+                <div id="notification"></div>
                 <form>
                     <fieldset>
                         <div class="form-group">
                             <label for="exampleInputEmail1" class="form-label mt-4">Email address/Username</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <div class="group">
+                                <i class="fa fa-user form-icon bg-primary"></i>
+                                <input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
+
                             <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <div class="group">
+                                <i class="fa fa-lock form-icon bg-primary"></i>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="Role" class="form-label mt-4">User Role</label>
-                            <select class="form-select form-control" id="role">
-                                <option>Admin</option>
-                                <option>Client User</option>
-                                <option>Manager</option>
-                            </select>
+
+                            <div class="group">
+                                <i class="fas fa-shield-alt form-icon bg-primary"></i>
+                                <select class="form-select form-control" id="role">
+                                    <option>Admin</option>
+                                    <option>Client User</option>
+                                    <option>Manager</option>
+                                </select>
+                            </div>
                         </div>
                     </fieldset>
                     <fieldset>
-                       <a href="">forgot password?</a>
+                        <a href="">forgot password?</a>
                     </fieldset>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary form-control">Sign In</button>
+
+                <div class="group">
+                    <i class="fa fa-sign-in-alt form-icon sign-in"></i>
+                    @*<i class="fa fa-sign-in" aria-hidden="true"></i>*@
+                    <button type="button" class="btn btn-primary form-control" onclick="methods.Login()">Sign In</button>
+                </div>
             </div>
         </div>
     </div>

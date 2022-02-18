@@ -1,6 +1,7 @@
-﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+﻿
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Hospital Management System</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -13,24 +14,27 @@
                         <span class="visually-hidden">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-expanded="false">Administration <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>@Html.ActionLink("System Users", "Index", "User", new { @class = "dropdown-item" })</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Roles", "Index", "Role", new { @class = "dropdown-item" })</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Permissions", "Index", "Permission", new { @class = "dropdown-item" })</li>
+                    </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
+                    <ul class="dropdown-menu" role="menu">
+                        <li> <a class="dropdown-item" href="#" name="default" onclick="methods.themes(this.name)">Default </a>   <div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="#" name="ocean" onclick="methods.themes(this.name)">Blue Ocean</a>   <div class="dropdown-divider"></div></li>
+                        <li> <a class="dropdown-item" href="#" name="solar" onclick="methods.themes(this.name)">Solar </a>   <div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="#" name="cyborg" onclick="methods.themes(this.name)">Cyborg</a>   <div class="dropdown-divider"></div></li>
+                        <li> <a class="dropdown-item" href="#" name="darkly" onclick="methods.themes(this.name)">Darkly </a>   <div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="#" name="slate" onclick="methods.themes(this.name)">Slate</a>   <div class="dropdown-divider"></div></li>
+                    </ul>
                 </li>
             </ul>
             <form class="d-flex">

@@ -12,22 +12,26 @@
                 @* Link to existing Patients *@
                 <li class="nav-item" id="navPatients">
                     <div class="dropdown-divider"></div>
-                    @Html.ActionLink("Patients", "Index", "Patient")
+                        @Html.ActionLink("Patients", "Index", "Patient")
                     <div class="dropdown-divider"></div>
                 </li>
                 @* link to both internal and external *@
                 <li class="nav-item" id="navDoctors">
                     <div class="dropdown-divider"></div>
-                    @Html.ActionLink("Doctors", "Index", "Doctor")
+                        @Html.ActionLink("Doctors", "Index", "Doctor")
+                    <div class="dropdown-divider"></div>
                 </li>
                 @* link to booked appointments *@
-                <li class="nav-item" id="navAppointment">
-                    <div class="dropdown-divider"></div>
+            <li class="nav-item" id="navAppointment">
+                <div class="dropdown-divider"></div>
                     @Html.ActionLink("Appointments", "Index", "Appointment")
-                </li>
-               <li class="nav-item" id="navRooms">
+                <div class="dropdown-divider"></div>
+            </li>
+            <li class="nav-item" id="navRooms">
+                <div class="dropdown-divider"></div>
                 @Html.ActionLink("Room", "Index", "Room")
-                </li>
+                <div class="dropdown-divider"></div>
+            </li>
                 @* link to  available reports *@
                 <li class="nav-item" id="navReport">
                     <div class="dropdown-divider"></div>
