@@ -1,29 +1,126 @@
 ﻿<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
 <script>
+    var x = ""
     var app = new Vue({
         el: '#app',
         data: {
             collapse: true
             , data: ""
+            ,theme:""
+        },
+        watch:
+        {
+            handler: function (val) {
+                this.x();
+               console.log("ghhfjfkkdkddkkd")
+            },
+            immediate: true
         },
         methods:
         {
-            openNav: function openNav() {
-                document.getElementById("mySidenav").style.width = "200px";
-                this.showLinks();
-            }
-            , showLinks: function showLinks() {
-                document.getElementById("links").style.display = "block";
-                this.collapse = false;
-            }
-            , closeNav: function closeNav() {
-                document.getElementById("mySidenav").style.width = "60px";
-                document.getElementById("links").style.display = "none";
-                this.collapse = true;
+
+            //openNav: function openNav() {
+            //    document.getElementById("mySidenav").style.width = "200px";
+            //    this.showLinks();
+            //}
+            //, showLinks: function showLinks() {
+            //    document.getElementById("links").style.display = "block";
+            //    this.collapse = false;
+            //}
+            //, closeNav: function closeNav() {
+            //    document.getElementById("mySidenav").style.width = "60px";
+            //    document.getElementById("links").style.display = "none";
+            //    this.collapse = true;
+            //},
+            Login: function Login() {
+                console.log("login executed")
+                let user = $("#username").val();
+                let pass = $("#password").val();
+                let credentials = {
+                    username: user,
+                    password: pass
+                }
+                doAPIRequest('/User/Login', credentials, 'POST', 'json', {}, this.LoginResponse);
+            },
+            LoginResponse: function LoginResponse(responseData) {
+                responseData && responseData.err ? this.LoginError() : this.LoginSuccess(responseData);
+                console.log("the response is ", responseData);
+            },
+            LoginSuccess: function LoginSuccess(data) {
+                let alert = document.getElementById("loginScreen");
+                alert.style = 'display:none;';
+                document.getElementById("role").innerHTML = data.role + ' :';
+                document.getElementById("user").innerHTML = data.FirstName + " " + data.LastName;
+                this.themes(data.Theme);
+                console.log("should be showing");
+            },
+            LoginError: function LoginError() {
+                let alert = document.getElementById("notification");
+                alert.className = "alert alert-danger";
+                alert.innerHTML = "Incorrect Username or Password";
+            },
+            themes: function themes(theme) {
+                var link = document.getElementsByTagName('link')[0];
+                link.id = "theme";
+                switch (theme) {
+                    case "ocean":
+                        link.href = "../Content/bootstrap_ocean.css";
+                        break;
+                    case "solar":
+                        link.href = "../Content/bootstrap_solar.css";
+                        break;
+                    case "cyborg":
+                        link.href = "../Content/bootstrap_cyborg.css";
+                        break;
+                    case "slate":
+                        link.href = "../Content/bootstrap_slate.css";
+                        break;
+                    case "darkly":
+                        link.href = "../Content/bootstrap_darkly.css";
+                        break;
+                    case "default":
+                    default:
+                        link.href = "../Content/bootstrap.css";
+
+                }
+                this.saveStorage(theme);
+                theme ? this.setCookie(theme) : "";
+                console.log(this.openStorage(), "themes ", link)
+            },
+            setCookie: function setCookie(cvalue) {
+                document.cookie = cvalue ;
+            },
+            openStorage() {
+                return localStorage.getItem('theme')
+            },
+            saveStorage(theme) {
+                localStorage.setItem('theme', theme)
+                let decodedCookie = decodeURIComponent(document.cookie);
+                console.log("cookie is vue", decodedCookie)
             }
         }
         , mounted() {
-            console.log("this is vue")
+            let decodedCookie = decodeURIComponent(document.cookie)
+            decodedCookie ? this.themes(decodedCookie) : "";
+            var e = this.openStorage();
+            console.log("thaaaaaaaaais is vue",e,"llllll")
         }
     })
+</script>
+<script>
+    var collapse = true;
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "200px";
+        this.showLinks();
+    }
+        function showLinks() {
+        document.getElementById("links").style.display = "block";
+        this.collapse = false;
+    }
+         function closeNav() {
+        document.getElementById("mySidenav").style.width = "60px";
+        document.getElementById("links").style.display = "none";
+        this.collapse = true;
+    }
 </script>

@@ -6,8 +6,10 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Hospital_System.Controllers.Helpers;
 using Hospital_System.Data;
 using Hospital_System.Models;
+using System.Web.Script.Serialization;
 
 namespace Hospital_System.Controllers
 {
@@ -21,6 +23,14 @@ namespace Hospital_System.Controllers
             return View(db.Users.ToList());
         }
 
+        public ActionResult Login(string username, string password)
+        {
+            JsonResult jsonResult = new JsonResult
+            {
+                Data = LoginHelperController.CheckUserExistLogin(username, password)
+            };
+            return jsonResult;
+        }
         // GET: User/Details/5
         public ActionResult Details(int? id)
         {

@@ -8,15 +8,15 @@
  * @param {any} callBackParameter
  * @param {any} callBack
  */
-var doAPIRequest = function (url, method, dataType, contentType, callBackParameter, callBack) {
+var doAPIRequest = function (url,params ,method, dataType, callBackParameter, callback) {
     //function will be called on button click having id btnsave
     $.ajax({
         url: url,
-        type: type,
-        data: data,
+        type: method,
+        data: params,
         dataType: dataType
-    })
-        .done(function (data) {
+    }).done(function (data) {
+        console.log("callback");
             return callback(data, callBackParameter);
         })
         .fail(function (xhr, textStatus, errorThrown) {

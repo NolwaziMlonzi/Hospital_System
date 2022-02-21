@@ -19,14 +19,15 @@
             @RenderPage("~/Views/Shared/_SideNavBar.cshtml")
         </div>
         <div class="container body-content">
+            <p id="a"></p>
             @RenderBody()
-            <hr />
         </div>
         <div id="nav3">
             @RenderPage("~/Views/Shared/_Footer.cshtml")
         </div>
     </div>
     @RenderPage("~/Views/Shared/VueJS.cshtml")
+    @Scripts.Render("~/bundles/methods")
     @Scripts.Render("~/bundles/vuejs")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

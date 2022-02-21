@@ -1,78 +1,59 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
-
-<form id="form1" runat="server">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 col-md-6 col-sm-8 col-xl-12 " style="margin: auto; float: initial; padding-top: 5%">
-                <div class="row userInfo">
-
-                    <div class="panel panel-default " style="width: calc(100% - 100px);">
-                        <div class="panel-heading">
-                            <h3 class="panel-title" style="text-align: left; font-weight: bold">
-                                <a class="collapseWill">Sign In</a>
-                            </h3>
+﻿@Scripts.Render("~/bundles/methods")
+@Scripts.Render("~/bundles/api")
+<div class="modal" id="loginScreen">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <fieldset>
+                    <h1>Login</h1>
+                </fieldset>
+            </div>
+            <div class="modal-body">
+                <div id="notification"></div>
+                <form>
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form-label mt-4">Email address/Username</label>
+                            <div class="group">
+                                <i class="fa fa-user form-icon bg-primary"></i>
+                                <input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
-                        <div id="collapse1" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <div class="col-md-"></div>
-                                        <label class="col-md-12 control-label" for="prependedcheckbox">
-                                            User ID
-                                        </label>
-                                        <div class="col-md-12">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
-                                                <input type="text" id="txtUserName" class="form-control" placeholder="Enter User ID" runat="server" />
-                                            </div>
-                                            <label id="lblErrUserName" class="help-block" runat="server" Text="" ForeColor="White"></label>
-                                        </div>
+                        <div class="form-group">
 
-                                        <label class="col-md-12 control-label" for="prependedcheckbox">
-                                            Password
-                                        </label>
-                                        <div class="col-md-12">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="fa fa-lock"></i>
-                                                </span>
-                                                <input type="password" id="txtPassword" Class="form-control" placeholder="Enter Your Password" runat="server" TextMode="Password" />
-                                            </div>
-                                            <label id="lblErrPassword" class="help-block" runat="server" value="" ForeColor="White"></label>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <input type="checkbox" Id="chbRemember" Visible="false" runat="server" value="Remember" />Remember
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="fas fa-sign-in-alt"></i>
-                                                </span>
-                                                <input type="submit" id="txtPassword" class="form-control btn btn-success" placeholder="Enter Your Password" runat="server" TextMode="Password" />
-                                            </div>
-                                            <label id="lblErrPassword" class="help-block" runat="server" value="" ForeColor="White"></label>
-                                        </div>
-                                    </div>
-                                </fieldset>
-
+                            <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+                            <div class="group">
+                                <i class="fa fa-lock form-icon bg-primary"></i>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="Role" class="form-label mt-4">User Role</label>
 
-                        <div class="panel-heading">
-                            <div class="panel-title" style="text-align: right">
-                                <a class="collapseWill" href="" style="font-size: x-small">
-                                    Forgot Username or Password?
-                                </a>
+                            <div class="group">
+                                <i class="fas fa-shield-alt form-icon bg-primary"></i>
+                                <select class="form-select form-control" id="role">
+                                    <option>Admin</option>
+                                    <option>Client User</option>
+                                    <option>Manager</option>
+                                </select>
                             </div>
                         </div>
-                    </div>
+                    </fieldset>
+                    <fieldset>
+                        <a href="">forgot password?</a>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <div class="group">
+                    <i class="fa fa-sign-in-alt form-icon sign-in"></i>
+                    @*<i class="fa fa-sign-in" aria-hidden="true"></i>*@
+                    <button type="button" class="btn btn-primary form-control" @@click="Login()">Sign In</button>
                 </div>
             </div>
         </div>
     </div>
-</form>
+</div>
