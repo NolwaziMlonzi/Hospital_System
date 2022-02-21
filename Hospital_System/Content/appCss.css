@@ -146,3 +146,24 @@
     color: var(--bs-body-color);
     padding: 0.68rem 0.75rem;
 }
+.nav-icon {
+    font-size: 36px;
+    padding: 0rem 1.545rem;
+}
+.nav-list {
+    width: 130px;
+    text-align: center;
+}
+.administration li a {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1rem;
+    clear: both;
+    font-weight: 400;
+    color: #ebebeb;
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}

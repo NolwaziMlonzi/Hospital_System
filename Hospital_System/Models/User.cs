@@ -27,5 +27,9 @@ namespace Hospital_System.Models
 
         [Display(Name = "Password")]
         public string password { set; get; }
+
+        [Display(Name = "Theme")]
+        public string Theme { set; get; } = "default";
+
     }
 }

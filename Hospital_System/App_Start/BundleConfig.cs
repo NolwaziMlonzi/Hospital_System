@@ -1,5 +1,7 @@
 ﻿using System.Web;
+using System.Web.Mvc;
 using System.Web.Optimization;
+using Hospital_System.Models;
 
 namespace Hospital_System
 {
@@ -8,6 +10,7 @@ namespace Hospital_System
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            User user = new User();
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -27,16 +30,32 @@ namespace Hospital_System
             
             bundles.Add(new StyleBundle("~/bundles/font_awesome").Include(
                      "~/lib/font-awesome/css/all.css"));
-
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            if(string.IsNullOrEmpty(user.Theme) || user.Theme =="default")
+            {
+                bundles.Add(new StyleBundle("~/Content/css").Include(
                       //"~/Content/bootstrap_slate.css"
-                      //"~/Content/bootstrap.css"
+                      "~/Content/bootstrap.css"
                       //"~/Content/bootstrap_ocean.css"
                       // "~/Content/site.css"
                       //"~/Content/bootstrap_cyborg.css"
                       //"~/Content/bootstrap_solar.css"
-                      "~/Content/bootstrap_darkly.css"
+                      //"~/Content/bootstrap_darkly.css"
                       ));
+            }
+            else
+            {
+                
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      //"~/Content/bootstrap_slate.css"
+                      //"~/Content/bootstrap.css"
+                      "~/Content/bootstrap_"+ user.Theme +".css"
+                      // "~/Content/site.css"
+                      //"~/Content/bootstrap_cyborg.css"
+                      //"~/Content/bootstrap_solar.css"
+                      //"~/Content/bootstrap_darkly.css"
+                      ));
+
+            }
             //Bundle for app methods.
             bundles.Add(new ScriptBundle("~/bundles/methods").Include(
                        "~/Scripts/Custom/methods-{version}.js"));

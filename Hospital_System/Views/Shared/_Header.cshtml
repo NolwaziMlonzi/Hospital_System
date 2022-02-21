@@ -1,4 +1,6 @@
 ﻿
+@*@Scripts.Render("~/bundles/methods")
+@Scripts.Render("~/bundles/api")*@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Hospital Management System</a>
@@ -17,19 +19,19 @@
 
                 <li class="nav-item dropdown">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-expanded="false">Administration <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li>@Html.ActionLink("System Users", "Index", "User", new { @class = "dropdown-item" })</li>
+                    <ul class="dropdown-menu administration" role="menu">
+                        <li>@Html.ActionLink("System Users", "Index", "User")</li>
                         <li class="divider"></li>
-                        <li>@Html.ActionLink("Roles", "Index", "Role", new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Roles", "Index", "Role")</li>
                         <li class="divider"></li>
-                        <li>@Html.ActionLink("Permissions", "Index", "Permission", new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Privilages", "Index", "Permission")</li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <ul class="dropdown-menu" role="menu">
                         <li> <a class="dropdown-item" href="#" name="default" onclick="methods.themes(this.name)">Default </a>   <div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="#" name="ocean" onclick="methods.themes(this.name)">Blue Ocean</a>   <div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="#" name="ocean" onclick="methods.themes(this.name)">Ocean</a>   <div class="dropdown-divider"></div></li>
                         <li> <a class="dropdown-item" href="#" name="solar" onclick="methods.themes(this.name)">Solar </a>   <div class="dropdown-divider"></div></li>
                         <li><a class="dropdown-item" href="#" name="cyborg" onclick="methods.themes(this.name)">Cyborg</a>   <div class="dropdown-divider"></div></li>
                         <li> <a class="dropdown-item" href="#" name="darkly" onclick="methods.themes(this.name)">Darkly </a>   <div class="dropdown-divider"></div></li>
@@ -40,6 +42,23 @@
             <form class="d-flex">
                 <input class="form-control me-sm-2" type="text" placeholder="Search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item nav-list">
+                        <a class="nav-link" href="#" id="role">
+                            Admin :
+                        </a>
+                    </li>
+                    <li class="nav-item nav-list">
+                        <a class="nav-link" href="#" id="user">
+                            Nolwazi Mlonzi
+                        </a>
+                    </li>
+                </ul>
+                <i class="fa fa-user-circle nav-icon" aria-hidden="true"></i>
+                <a href="/">
+                    <i class="fa fa-sign-out-alt nav-icon" aria-hidden="true"></i>
+                </a>
             </form>
         </div>
     </div>

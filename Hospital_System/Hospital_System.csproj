@@ -148,6 +148,10 @@
     <Compile Include="Migrations\202201231804095_added role prop in permission.Designer.cs">
       <DependentUpon>202201231804095_added role prop in permission.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202181826438_added New coloumn called theme.cs" />
+    <Compile Include="Migrations\202202181826438_added New coloumn called theme.Designer.cs">
+      <DependentUpon>202202181826438_added New coloumn called theme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Doctor.cs" />
@@ -352,6 +356,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201231804095_added role prop in permission.resx">
       <DependentUpon>202201231804095_added role prop in permission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202181826438_added New coloumn called theme.resx">
+      <DependentUpon>202202181826438_added New coloumn called theme.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

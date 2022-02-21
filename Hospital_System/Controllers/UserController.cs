@@ -29,7 +29,6 @@ namespace Hospital_System.Controllers
             {
                 Data = LoginHelperController.CheckUserExistLogin(username, password)
             };
-
             return jsonResult;
         }
         // GET: User/Details/5
